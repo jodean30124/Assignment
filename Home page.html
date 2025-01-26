@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <title>Home</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        align-content: center;
+        background-image: url("https://images.squarespace-cdn.com/content/v1/5db07d25de0a1a60673fb0c7/1584364567800-BM8LU1TU0FVBN7XXD3WR/Maths.png")
+      }
+    /* Style the header */
+    header {
+        position: sticky;
+        background-color: #666;
+        width: 99.1%;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    button{
+        position: relative;
+        display: block;
+        width: 400px;
+        height: 300px;
+        background-color: black;
+        margin: 0 auto;
+        animation-name: button;
+        animation-duration: 4s;
+        overflow: hidden;
+    }
+    
+    button{
+        color: beige;
+        font-size: 30px;  
+    }
+
+    button::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://media3.giphy.com/media/dDFPsSRtmyW0SYQSGS/source.gif");
+        background-size: 500px;
+        opacity: 0;
+        transition: opacity 2s;
+    }
+
+    button:hover::after{
+        opacity: 1;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Welcome To Jo-dean's Calculator</h1>
+</header>
+
+    <button onclick="myLoginFunction()"><b>Login to use my calculator Today!</b>
+    </button>
+
+    <script>
+        function myLoginFunction() {
+            let username;
+            
+            // Keep asking for a valid username
+            while (true) {
+                username = prompt("Please enter your username");
+    
+                // Check if user cancels or enters nothing
+                if (username === null || username.trim() === "") {
+                    alert("Sorry we weren't much help, Goodbye for now until next time!");
+                    return;
+                }
+    
+                // If username is correct, break the loop and proceed to password
+                if (username === "CedricK") {
+                    break; // Exit the username loop and continue to password
+                }
+    
+                // If username is incorrect, ask if they want to try again
+                let tryAgain = confirm("Invalid Username. Would you like to try again?");
+                if (!tryAgain) {
+                    alert("Goodbye!");
+                    return; // Exit the function if they choose not to retry
+                }
+            }
+    
+            let password;
+            
+            // Keep asking for a valid password
+            while (true) {
+                password = prompt("Please enter your password");
+    
+                // Check if password is empty or canceled
+                if (password === null || password.trim() === "") {
+                    alert("Sorry we weren't much help, Goodbye for now until next time!");
+                    return;
+                }
+    
+                // Validate password
+                if (password === "CK2025") {
+                    break; // Correct password, exit the loop
+                }
+    
+                // If password is incorrect, ask if they want to try again
+                let tryAgain = confirm("Invalid Password. Would you like to try again?");
+                if (!tryAgain) {
+                    alert("Goodbye!");
+                    return; // Exit the function if they choose not to retry
+                }
+            }
+    
+            // Successful login
+            alert("Welcome, Mr. Keown.");
+            window.location.href = "";
+        }
+    </script>
+    
+    
+    
+    
+
+
+</body>
+</html>
